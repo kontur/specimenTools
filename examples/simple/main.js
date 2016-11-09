@@ -9,6 +9,7 @@ define([
   , 'specimenTools/widgets/GenericFontData'
   , 'specimenTools/widgets/CurrentWebFont'
   , 'specimenTools/widgets/TypeTester'
+  , 'specimenTools/widgets/FontLister'
 ], function(
     loadFonts
   , initDocumentWidgets
@@ -20,6 +21,7 @@ define([
   , GenericFontData
   , CurrentWebFont
   , TypeTester
+  , FontLister
 ) {
     "use strict";
 
@@ -42,7 +44,8 @@ define([
         factories = [
             // [css-class of host element, Constructor(, further Constructor arguments, ...)]
             // All Constructors are given [dom-container, pubsub] as the first two arguments.
-            ['family-chooser', FamilyChooser, fontsData]
+            //['family-chooser', FamilyChooser, fontsData]
+            ['font-lister', FontLister, fontsData]
           , ['glyph-table', GlyphTables]
           , ['font-data', GenericFontData, fontsData]
           , ['current-font', CurrentWebFont, webFontProvider]
