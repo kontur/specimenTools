@@ -6,10 +6,6 @@
     <script src="../../../lib/bower_components/requirejs/require.js"></script>
     <script>
     fontFiles = [
-        '../../assets/fonts/Ubuntu-Regular.otf',
-        '../../assets/fonts/OpenSans-Bold-webfont.woff',
-        '../../assets/fonts/Roboto-Black-webfont.woff',
-        '../../assets/fonts/sourcesanspro-regular-webfont.woff',
         '../../assets/fonts/Jura-Medium.ttf'
       , '../../assets/fonts/MontserratAlternates-Bold.ttf'
       , '../../assets/fonts/MontserratAlternates-ExtraBold.ttf'
@@ -153,13 +149,12 @@
        data-step-line-height="5"
        data-value-line-height="100"
        data-class-line-height="custom-class special-slider">
-<!--
 
     <h2 class="mdl-card__title-text">Test the Font</h2>
     <h5>Default Features</h5>
-    <div class="type-tester__features&#45;&#45;default"></div>
+    <div class="type-tester__features--default"></div>
     <h5>Optional Features</h5>
-    <div class="type-tester__features&#45;&#45;optional"></div>
+    <div class="type-tester__features--optional"></div>
 
     <h5>Font size: <span class="type-tester__label" data-target-property="font-size"></span></h5>
     <div class="type-tester__slider" data-target-property="font-size"></div>
@@ -169,10 +164,14 @@
 
     <h5>Line height: <span class="type-tester__label" data-target-property="line-height"></span></h5>
     <div class="type-tester__slider" data-target-property="line-height"></div>
--->
 
     <div class="font-lister"></div>
-    
+
+    <div class="feature-lister">
+      <div class="feature-lister__features--default"></div>
+      <div class="feature-lister__features--optional"></div>
+    </div>
+
     <p class="current-font type-tester__content" contenteditable="true">
     TYPE HERE …<br />
     Web typography refers to the use of fonts on the World Wide Web. When
@@ -189,9 +188,8 @@
 
   </div>
 
-  <div class="bar feature-lister foo"><button>foo</button></div>
 
-   <!--<div class="glyph-table"></div>-->
+   <div class="glyph-table"></div>
 </div>
 
 </body>
