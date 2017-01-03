@@ -10,7 +10,6 @@ define([
   , 'specimenTools/widgets/CurrentWebFont'
   , 'specimenTools/widgets/TypeTester'
   , 'specimenTools/widgets/FontLister'
-  , 'specimenTools/widgets/FeatureLister'
 ], function(
     loadFonts
   , initDocumentWidgets
@@ -23,7 +22,6 @@ define([
   , CurrentWebFont
   , TypeTester
   , FontLister
-  , FeatureLister
 ) {
     "use strict";
 
@@ -48,7 +46,6 @@ define([
             // All Constructors are given [dom-container, pubsub] as the first two arguments.
             //['family-chooser', FamilyChooser, fontsData]
             ['font-lister', FontLister, fontsData]
-          , ['feature-lister', FeatureLister, fontsData]
           , ['glyph-table', GlyphTables]
           , ['font-data', GenericFontData, fontsData]
           , ['current-font', CurrentWebFont, webFontProvider]
