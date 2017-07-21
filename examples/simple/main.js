@@ -43,7 +43,7 @@ define([
               // passing in this object with a font's postscript name
               // allows this name to be overwritten
               overwrites: { 
-                'JosefinSans': 'Testname: Josefin Sans' 
+                'JosefinSans-Regular.ttf': 'Testname: Josefin Sans' 
               } 
             })
           , webFontProvider = new WebFontProvider(window, pubsub, fontsData)
