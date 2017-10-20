@@ -10,6 +10,7 @@ define([
   , 'specimenTools/widgets/CurrentWebFont'
   , 'specimenTools/widgets/TypeTester'
   , 'specimenTools/widgets/FontLister'
+  , 'specimenTools/widgets/FeatureLister'
 ], function(
     loadFonts
   , initDocumentWidgets
@@ -22,6 +23,7 @@ define([
   , CurrentWebFont
   , TypeTester
   , FontLister
+  , FeatureLister
 ) {
     "use strict";
 
@@ -37,15 +39,7 @@ define([
         // dependant on the state of another module.
         var pubsub = new PubSub()
           , factories
-          , fontsData = new FontsData(pubsub, {
-              useLaxDetection: true, 
-
-              // passing in this object with a font's postscript name
-              // allows this name to be overwritten
-              overwrites: { 
-                'JosefinSans-Regular.ttf': 'Testname: Josefin Sans' 
-              } 
-            })
+          , fontsData = new FontsData(pubsub, {useLaxDetection: true})
           , webFontProvider = new WebFontProvider(window, pubsub, fontsData)
           ;
 
@@ -54,6 +48,7 @@ define([
             // All Constructors are given [dom-container, pubsub] as the first two arguments.
             //['family-chooser', FamilyChooser, fontsData]
             ['font-lister', FontLister, fontsData]
+          , ['feature-lister', FeatureLister, fontsData]
           , ['glyph-table', GlyphTables]
           , ['font-data', GenericFontData, fontsData]
           , ['current-font', CurrentWebFont, webFontProvider]
