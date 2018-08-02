@@ -39,7 +39,27 @@ define([
         // dependant on the state of another module.
         var pubsub = new PubSub()
           , factories
-          , fontsData = new FontsData(pubsub, {useLaxDetection: true})
+          , fontsData = new FontsData(pubsub, {
+              useLaxDetection: true, 
+
+              // passing in this object with overwrites per font file gets
+              // applied on top of the parsed opentype font object and overwrites
+              // only those properties defined
+              overwrites: { 
+                '../../assets/fonts/Jura-Medium.ttf': {
+                  'names': {
+                    'postScriptName':  {
+                      'en': 'Jura overwritten'
+                    }
+                  },
+                  'tables': {
+                    'os2': {
+                      'usWeightClass': 400
+                    }
+                  }
+                }
+              } 
+            })
           , webFontProvider = new WebFontProvider(window, pubsub, fontsData)
           ;
 
